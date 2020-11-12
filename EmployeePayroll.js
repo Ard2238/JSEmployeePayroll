@@ -81,4 +81,10 @@ console.log("Days (Full Time Wage): " + fullTimeWageArray)
 console.log("First Occurence of Full Time Wage: " + employeeWageMapArray.find(displayDaysFullTimeWage))
 
 // 7E: CHECK FOR EVERY OCCURRENCE OF FULL TIME WAGES
-console.log("Check every occurrence of full time wages: " + employeeWageMapArray.every(displayDaysFullTimeWage))
+//console.log("Check every occurrence of full time wages: " + employeeWageMapArray.every(displayDaysFullTimeWage))
+
+// 7F: CHECK IF THERE IS PART TIME WAGES
+function displayDaysPartTimeWage (dailyWage){
+    return dailyWage.includes("80");
+}
+console.log("Checking for part time wages: " + employeeWageMapArray.filter(displayDaysPartTimeWage))
