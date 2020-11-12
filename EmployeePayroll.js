@@ -59,3 +59,11 @@ function wages(totalWage, dailyWage){
     return totalWage + dailyWage
 }
 console.log("Total Wages From Reduce:  " + employeeWageArray.reduce(wages))
+
+// 7B: MAP FUNCTION: TO SHOW DAY AND DAILY WAGE
+let day = 0;
+function mapDayToDailyWage (emp_daily_wage){
+    day ++;
+    return "Day: " + day + "  Daily Wage: " + emp_daily_wage + "\n";
+}
+console.log("Map: Day to Daily Wages \n" + employeeWageArray.map(mapDayToDailyWage))
