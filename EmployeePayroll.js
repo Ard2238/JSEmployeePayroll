@@ -76,3 +76,6 @@ function displayDaysFullTimeWage (dailyWage){
 }
 let fullTimeWageArray = employeeWageMapArray.filter(displayDaysFullTimeWage)
 console.log("Days (Full Time Wage): " + fullTimeWageArray)
+
+// 7D: FIRST OCCURENCE OF FULL TIME WAGE
+console.log("First Occurence of Full Time Wage: " + employeeWageMapArray.find(displayDaysFullTimeWage))
