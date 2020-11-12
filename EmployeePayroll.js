@@ -19,7 +19,7 @@ const NUM_WORKING_DAYS = 20;
 const MAX_WORKING_HOURS = 160;
 
 var total_emp_hours = 0;
-var total_working_days = 0;
+var total_working_days = 1;
 
 var employeeWageArray = new Array()
 var employeeWageMapArray = new Array
@@ -88,3 +88,10 @@ function displayDaysPartTimeWage (dailyWage){
     return dailyWage.includes("80");
 }
 console.log("Checking for part time wages: " + employeeWageMapArray.filter(displayDaysPartTimeWage))
+
+// 7G: GET TOTAL WORKING DAYS
+function getTotalWorkingDays(totalWorkingDays, dailyWage){
+    if(dailyWage > 0) totalWorkingDays ++;
+    return totalWorkingDays
+}
+console.log("Total Working Days: " + employeeWageArray.reduce(getTotalWorkingDays,0))
