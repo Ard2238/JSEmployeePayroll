@@ -22,6 +22,7 @@ var total_emp_hours = 0;
 var total_working_days = 0;
 
 var employeeWageArray = new Array()
+var employeeWageMapArray = new Array
 
 // FUNCTION TO SET EMPLOYEE HOURS
 function demo(options){
@@ -66,4 +67,12 @@ function mapDayToDailyWage (emp_daily_wage){
     day ++;
     return "Day: " + day + "  Daily Wage: " + emp_daily_wage + "\n";
 }
-console.log("Map: Day to Daily Wages \n" + employeeWageArray.map(mapDayToDailyWage))
+employeeWageMapArray = employeeWageArray.map(mapDayToDailyWage)
+console.log("Map: Day to Daily Wages \n" + employeeWageMapArray)
+
+// 7C: DAYS ON WHICH FULL TIME WAGE IS EARNED
+function displayDaysFullTimeWage (dailyWage){
+    return dailyWage.includes("160");
+}
+let fullTimeWageArray = employeeWageMapArray.filter(displayDaysFullTimeWage)
+console.log("Days (Full Time Wage): " + fullTimeWageArray)
