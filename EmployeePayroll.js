@@ -79,3 +79,6 @@ console.log("Days (Full Time Wage): " + fullTimeWageArray)
 
 // 7D: FIRST OCCURENCE OF FULL TIME WAGE
 console.log("First Occurence of Full Time Wage: " + employeeWageMapArray.find(displayDaysFullTimeWage))
+
+// 7E: CHECK FOR EVERY OCCURRENCE OF FULL TIME WAGES
+console.log("Check every occurrence of full time wages: " + employeeWageMapArray.every(displayDaysFullTimeWage))
