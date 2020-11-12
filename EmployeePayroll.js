@@ -95,3 +95,70 @@ function getTotalWorkingDays(totalWorkingDays, dailyWage){
     return totalWorkingDays
 }
 console.log("Total Working Days: " + employeeWageArray.reduce(getTotalWorkingDays,0))
+
+// UC14: CHECK FOR EMPLOYEE ID, SALARY > 0, GENDER-> 'M' or 'F'
+class Employee{
+    id;
+    salary;
+    gender;
+    date;
+
+    constructor(id, name, salary, gender, date){
+        this.id = id;
+        this.name = name;
+        this.salary = salary;
+        this.gender = gender;
+        this.date = date;
+    }
+
+    set id(id){
+        let regex = RegExp('^[0-9]+')
+        if(regex.test(id))
+            this._id = id;
+        else throw "Incorrect Id"
+    }
+    set name(name){
+        this._name = name;
+    }
+    set salary(salary){
+        let regex = RegExp('^[0-9]+')
+        if(regex.test(salary))
+            this._salary = salary;
+        else throw "Incorrect Salary"
+    }
+    set gender(gender){
+        let regex = RegExp('?[MF]')
+        if(regex.test(gender))
+            this._gender = gender;
+        else throw "Incorrect Gender"
+    }
+    set date(date){
+        this._date = date
+    }
+}
+
+try{
+    let employee1 = new Employee(-1, "Mark", 1000, 'M', new Date())
+    console.log(employee1.toString())
+}catch (error){
+    console.log("Error: " + error)
+}
+try{
+    let employee2 = new Employee(1, "Mark", -1000, 'M', new Date())
+    console.log(employee2.toString())
+}catch (error){
+    console.log("Error: " + error)
+}
+try{
+    let employee3 = new Employee(1, "Mark", 2000, 'H', new Date())
+    console.log(employee3.toString())
+}catch (error){
+    console.log("Error: " + error)
+}
+try{
+    let employee4 = new Employee(1, "Mark", 3000, 'M', new Date())
+    console.log(employee4.toString())
+}catch (error){
+    console.log("Error: " + error)
+}
+
