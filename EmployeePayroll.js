@@ -103,12 +103,12 @@ class Employee{
     gender;
     date;
 
-    constructor(id, name, salary, gender, date){
-        this.id = id;
-        this.name = name;
-        this.salary = salary;
-        this.gender = gender;
-        this.date = date;
+    constructor(...params){
+        this.id = params[0];
+        this.name = params[1];
+        this.salary = params[2];
+        this.gender = params[3];
+        this.date = params[4];
     }
 
     set id(id){
@@ -139,25 +139,25 @@ class Employee{
 
 try{
     let employee1 = new Employee(-1, "Mark", 1000, 'M', new Date())
-    console.log(employee1.toString())
+    console.log(employee1)
 }catch (error){
     console.log("Error: " + error)
 }
 try{
     let employee2 = new Employee(1, "Mark", -1000, 'M', new Date())
-    console.log(employee2.toString())
+    console.log(employee2)
 }catch (error){
     console.log("Error: " + error)
 }
 try{
     let employee3 = new Employee(1, "Mark", 2000, 'H', new Date())
-    console.log(employee3.toString())
+    console.log(employee3)
 }catch (error){
     console.log("Error: " + error)
 }
 try{
     let employee4 = new Employee(1, "Mark", 3000, 'M', new Date())
-    console.log(employee4.toString())
+    console.log(employee4)
 }catch (error){
     console.log("Error: " + error)
 }
