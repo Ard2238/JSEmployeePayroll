@@ -8,7 +8,7 @@ class Email{
         return this._mail;
     }
     set mail(mail){
-        let partOneRegex = RegExp('^[a-z]+[@][a-z0-9]+$')
+        let partOneRegex = RegExp('^[a-z]+[@][a-z0-9]+[.][a-z]+$')
         if(partOneRegex.test(mail)){
             this._mail = mail;
         }
@@ -18,9 +18,9 @@ class Email{
 
 
 try{
-    let email1 = new Email("abhishek@gmail1")
+    let email1 = new Email("abhishek@gmail1.com")
     console.log(email1)
-    let email2 = new Email("Abhishek")
+    let email2 = new Email("Abhishek@gmail.")
     console.log(email2)
 }catch(e){
     console.log("Error :  " + e)
